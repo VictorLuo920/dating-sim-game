@@ -4,6 +4,9 @@
 ### Game Description
 A dating simulation in which a player must choose from a selection of multiple choice responses in reaction to situational prompts in order to reach a desired "Good Ending" and avoid the "Bad Ending." In more complicated dating simulations, multiple brancing narratives and measuring of scores are tweaked with (but I haven't figured out how I want to tweak it yet)
 
+### Product Pitch
+A short 4-20 second mobile ad experience on Grindr that simulates the conversation after a random encounter and links viewers to resources for mental health, relationship counseling, etc. 
+
 ### Psuedocode
 ```
 1) Define required constants
