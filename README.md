@@ -5,7 +5,7 @@
 A dating simulation in which a player must choose from a selection of multiple choice responses in reaction to situational prompts in order to reach a desired "Good Ending" and avoid the "Bad Ending." In more complicated dating simulations, multiple brancing narratives and measuring of scores are tweaked with (but I haven't figured out how I want to tweak it yet)
 
 ### Psuedocode
-
+```
 1) Define required constants
     1.1) Define a choices array that holds the index numbers for the possible choices available to the player, in order to randomize their order through each playthrough. 
     1.2) Define a winningScore constant: this could be a hardcoded number depending on the planned number of responses, though it could be fun to try and think of how to complicate the game a bit more. 
@@ -35,4 +35,5 @@ A dating simulation in which a player must choose from a selection of multiple c
     5.4) Displays "play again?" button when game is over. 
 
 6) Handle a player clicking the replay button
-    6.1) Reinitializes the page. 
+    6.1) Reinitializes the page.
+```
