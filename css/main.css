@@ -1,15 +1,19 @@
-* {
-
+body {
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .section {
-
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .prompts {
-
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .choices {
-    
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.textbox {
+    bottom: auto;
 }
