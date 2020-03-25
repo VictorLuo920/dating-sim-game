@@ -102,7 +102,7 @@ secondScene.preload = function() {
 secondScene.create = function() {
         this.add.sprite(100, 100, 'character');
         this.prompt = this.add.text("Hey, I know I just met you, but you're pretty cool...");
-        this.choice1 = this.add.text("Ew, emotions.");
+        this.choice1 = this.add.text(500, 500, "Ew, emotions.");
         choice1.on('pointer up', function() {
             currentScore = currentScore - 1;
             this.scene.switch('thirdScene');
