@@ -53,64 +53,53 @@ let currentScore = 0;
 
 
 // Our scenes
-let titleScene = new Phaser.Scene("title");
-let firstScene = new Phaser.Scene("first");
-let secondScene = new Phaser.Scene("second");
-let thirdScene = new Phaser.Scene("third");
-let endScene = new Phaser.Scene("end");
+let titleScene = new Phaser.Scene("titleScene");
+let firstScene = new Phaser.Scene("firstScene");
+let secondScene = new Phaser.Scene("secondScene");
+let thirdScene = new Phaser.Scene("thirdScene");
+let endScene = new Phaser.Scene("endScene");
 
-// May have to refactor below code, anticipating possible error in trying to set all the methods neatly into one object declaration..., but quick inelegant workaround is simply going back to adding each method individually.
+//codes below are grouped by scenes, preload, and create functions. preloads preload images, which are rendered in the create through the "canvas" element on html... not sure why 
 
-
-titleScene = {
-    preload: function() {
-        this.load.image('background', 'URLtoaddlater');
-        this.load.image('character', 'URLtoaddlater')
-    }
-    create: function() {
-        this.add.background('background');
+titleScene.preload = function() {
+        this.load.image('character', 'https://s3.amazonaws.com/codecademy-content/courses/learn-phaser/sky.jpg')
+    };
+titleScene.create = function() {
         this.add.sprite(100, 100, 'character');
-        let startGame = this.add.text("Start Game?")
-        startGame.on('pointer up', function(){
-            this.scene.switch('firstScene')
-        })
-        
-    }
-};
+        let startGame = this.add.text(500, 500, "Start Game?");
+        startGame.setInteractive();
+        startGame.on('pointerdown', () => this.scene.switch("firstScene"));
+    };
 
-firstScene = {
-    preload: function() {
-        this.load.image('background', 'URLtoaddlater')
-        this.load.image('character', 'URLtoaddlater')
-    }
-    create: function() {
-        this.add.background('background');
+firstScene.preload = function() {
+        this.load.image('character', 'https://s3.amazonaws.com/codecademy-content/courses/learn-phaser/sky.jpg')
+    };
+    // hey dumbass you forgot to add setinteractive and coordinates for the text to appear....p
+firstScene.create = function() {
         this.add.sprite(100, 100, 'character');
-        this.prompt = this.add.text("Hey, that was a pretty intense night, huh?");
-        this.choice1 = this.add.text("Why are you still here?");
-        choice1.on('pointer up', function() {
+        this.add.text("Hey, that was a pretty intense night, huh?");
+        let choice1 = this.add.text(500, 500, "Why are you still here?");
+        console.log(choice1);
+        choice1.setInteractive();
+        choice1.on('pointerdown', () => {
             currentScore = currentScore - 1;
             this.scene.switch('secondScene');
         });
-        this.choice2 = this.add.text("What was your name again?");
-        choice2.on('pointer up', function() {
+        let choice2 = this.add.text("What was your name again?");
+        choice2.on('pointerdown', function() {
             this.scene.switch('secondScene');
         });
-        this.choice3 = this.add.text("I enjoyed it too!");
-        choice3.on('pointer up', function(){
+        let choice3 = this.add.text("I enjoyed it too!");
+        choice3.on('pointerdown', function(){
             currentScore = currentScore + 1;
             this.scene.switch('secondScene');
         })
-    }
-};
+    };
 
-secondScene = {
-    preload: function() {
-        this.load.image('background', 'URLtoaddlater')
-        this.load.image('character', 'URLtoaddlater')
-    }
-    create: function() {
-        this.add.background('background');
+secondScene.preload = function() {
+        this.load.image('character', 'https://s3.amazonaws.com/codecademy-content/courses/learn-phaser/sky.jpg')
+    };
+secondScene.create = function() {
         this.add.sprite(100, 100, 'character');
         this.prompt = this.add.text("Hey, I know I just met you, but you're pretty cool...");
         this.choice1 = this.add.text("Ew, emotions.");
@@ -127,16 +116,12 @@ secondScene = {
             currentScore = currentScore + 1;
             this.scene.switch('thirdScene');
         })
-    }
-};
+    };
 
-thirdScene = {
-    preload: function() {
-        this.load.image('background', 'URLtoaddlater');
-        this.load.image('character', 'URLtoaddlater')
-    }
-    create: function() {
-        this.add.background('background');
+thirdScene.preload = function() {
+        this.load.image('character', 'https://s3.amazonaws.com/codecademy-content/courses/learn-phaser/sky.jpg')
+    };
+thirdScene.create = function() {
         this.add.sprite(100, 100, 'character');
         this.prompt = this.add.text("Well, I guess I better get going...");
         this.choice1 = this.add.text("          ...         ");
@@ -153,16 +138,13 @@ thirdScene = {
             currentScore = currentScore + 1;
             this.scene.switch('endScene');
         });
-    }
-};
+    };
 
-endScene = {
-    preload: function() {
-        this.load.image('background', 'URLtoaddlater');
-        this.load.image('character', 'URLtoaddlater')
-    }
-    create: function() {
-        this.add.background('background');
+endScene.preload = function() {
+        this.load.image('character', 'https://s3.amazonaws.com/codecademy-content/courses/learn-phaser/sky.jpg')
+    };
+
+endScene.create = function() {
         this.add.sprite(100, 100, 'character');
         if (currentScore >= 1) {
             this.add.text("You win!")
@@ -171,25 +153,28 @@ endScene = {
         else {
             this.add.text("You lose!")
         }
-    }
 };
 
 // We no longer add the scene to the config
 const config = {
 	type: Phaser.AUTO,
 	width: 800,
-	height: 600,
+    height: 600,
+    backgroundColor: 'white'
 };
 
 // Our game Object
 const game = new Phaser.Game(config);
 
 // Add both scenes (it does not start them)
-game.scene.add("title", titleScene);
-game.scene.add("first", firstScene);
-game.scene.add("second", secondScene);
-game.scene.add("third", thirdScene);
-game.scene.add("end", endScene);
+game.scene.add("titleScene", titleScene);
+game.scene.add("firstScene", firstScene);
+game.scene.add("secondScene", secondScene);
+game.scene.add("thirdScene", thirdScene);
+game.scene.add("endScene", endScene);
 
 // Start the title scene
-game.scene.start('titleScene');
+game.scene.start("titleScene");
+
+ 
+
