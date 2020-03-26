@@ -1,14 +1,4 @@
-// Define constants 
-
-// const winningScore = 1
-
-// Define cached variables to track
-
 let currentScore = 0
-
-// // cached Elements references
-
-// Buttons
 
 $("#start").on('click', startGame);
 
@@ -24,12 +14,8 @@ function restartGame() {
     $(".title").css({'display': 'block'});
 }
 
-// // event listeners
 let $scene = $(".scene");
 $scene.on('click', "li", handleClick);
-
-
-// // functions
 
 function handleClick(event) {
 
@@ -40,4 +26,4 @@ function handleClick(event) {
     if (currentScore >= 1) {$(".goodend").css({'display': 'block'}); $(".badend").css({'display': 'none'})} 
         else {$(".goodend").css({'display': 'none'}); $(".badend").css({'display': 'block'})}
 }
-``
+
