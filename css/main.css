@@ -1,7 +1,15 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
+    
 }
 
+ul {
+    box-sizing: content-box;  
+    width: 300px;
+    height: 100px;
+    padding: 30px;  
+    border: 10px solid black;
+}
 p {
     display: none;
 }
