@@ -7,6 +7,9 @@ A dating simulation in which a player must choose from a selection of multiple c
 ### Product Pitch
 A short 4-20 second mobile ad experience on Grindr that simulates the conversation after a random encounter and links viewers to resources for mental health, relationship counseling, etc. 
 
+### How I'm Feeling About The Current Version of My Game
+https://www.kapwing.com/videos/5e7b9d1174cfe90016d8bc1a 
+
 ### Psuedocode
 ```
 1) Define required constants
