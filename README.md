@@ -9,8 +9,11 @@ A short 4-20 second mobile ad experience on Grindr that simulates the conversati
 
 https://victorluo920.github.io/dating-sim-game/
 
-### How I'm Feeling About The Current Version of My Game
-https://www.kapwing.com/videos/5e7b9d1174cfe90016d8bc1a 
+### Technologies Used
+HTML, CSS, Vanilla JS, JQuery, (messed with then ditched) Phaser
+
+### Future Plans
+Investigating collaborative development, assets generation, game and narative architecture
 
 ### Psuedocode
 ```
